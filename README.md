@@ -1,3 +1,5 @@
 # Github Flow Practice
 
-킹희원!!!
+잘하자 성민아 
+
+호구짓 그만하고
