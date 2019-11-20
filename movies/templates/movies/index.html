@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}movies::index{% endblock title %}
+
+{% block container %}
+{% for movie in movies %}
+{{ movie.title }}
+
+<a href="{% url 'movies:detail' movie.id %}"><img src="{{ movie.poster_url }}" alt="movie.title"></a>
+{% endfor %}
+{% endblock container %}

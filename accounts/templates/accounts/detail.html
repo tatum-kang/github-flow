@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+  accounts::detail
+{% endblock title %}
+{% block container %}
+  <h1>{{ user.username }}</h1>
+  {% for review in user.reviews_users.all %}
+    <li>코멘트 : {{review.content}} </li>
+    <li>평점 : {{review.score}}</li>
+  {% endfor %}
+  {% for movie in user.liked_movies.all %}
+  <li>좋아하는 영화 : {{movie.title}} </li>
+  {% endfor %}
+  <h2>follower : {{user.followers.all | length }}명</h2>
+  <h2>following : {{user.followings.all | length }}명</h2>
+  
+{% endblock container %}
