@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+  <header class="container">
+    <h1>저희 페이지 오신걸 환영합니다.</h1>
+    {% if user.is_authenticated %}
+    <p>
+      <a href="{% url 'accounts:logout' %}">로그아웃</a>
+      </form>
+    </p>
+    {% else %}
+    <p>
+      <a href="{% url 'accounts:login' %}">로그인</a>
+      <a href="{% url 'accounts:signup' %}">회원가입</a>
+    </p>
+    {% endif %}
+    <a href="{% url 'accounts:index' %}">[홈으로]</a>
+    <hr>
+  </header>
+  <div class="container">
+  {% block container %}{% endblock container %}
+  </div>
+</body>
+</html>
